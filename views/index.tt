@@ -1,0 +1,67 @@
+    <div id="page">
+      <div id="sidebar">
+        <ul id="sidebar-items">
+          <li>
+            <h3>Code repositories</h3>
+            <ul class="links">
+              <li><a href="https://github.com/doherty/WWW-3172-Crawler"><code>WWW::3172::Crawler</code></a></li>
+              <li><a href="https://github.com/doherty/WWW-3172-SearchEngine"><code>WWW::3172::SearchEngine</code></a></li>
+            </ul>
+          </li>
+
+          <li>
+          <h3><a href="#" id="about_env_link">Application environment</a></h3>
+          <div id="about-content" style="display: none;">
+            <table>
+                <tbody>
+                <tr>
+                    <td>Perl version</td>
+                    <td><tt><% perl_version %></tt></td>
+                </tr>
+                <tr>
+                    <td>Dancer version</td>
+                    <td><tt><% dancer_version %></tt></td>
+                </tr>
+                <tr>
+                    <td>Backend</td>
+                    <td><tt><% settings.apphandler %></tt></td>
+                </tr>
+                <tr>
+                    <td>Template engine</td>
+                    <td><tt><% settings.template %></tt></td>
+                </tr>
+                <tr>
+                    <td>Logger engine</td>
+                    <td><tt><% settings.logger %></tt></td>
+                </tr>
+                <tr>
+                    <td>Running environment</td>
+                    <td><tt><% settings.environment %></tt></td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+
+    <script type="text/javascript">
+    $('#about_env_link').click(function() {
+        $('#about-content').slideToggle('fast', function() {
+            // ok
+        });
+        return( false );
+    });
+    </script>
+          </li>
+        </ul>
+      </div><!--sidebar-->
+
+      <div id="content">
+        <div id="header">
+          <h1>Search</h1>
+          <h2>By <a href="http://hashbang.ca">Mike Doherty</a></h2>
+        </div>
+
+        <div id="search-form">
+            <% form %>
+        </div>
+      </div>
+    </div>
