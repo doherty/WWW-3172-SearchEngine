@@ -57,7 +57,7 @@ any ['get', 'post'] => '/s' => sub {
 SELECT url_str FROM url WHERE url_id in (
     SELECT url_id FROM url_words WHERE word_id in (
         SELECT word_id FROM words WHERE word_str in (%s)
-    )
+    ) ORDER BY url_word_count DESC
 )
 SQL
 
